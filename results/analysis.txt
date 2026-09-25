@@ -1,0 +1,123 @@
+requests=16555 tokens=12168646 cost=$0.5111 models=['jev-1.13.0']
+grid: missing=0 unexpected=0 clean_pairs=1349
+
+Neutral (empty statement) baselines:
+  a {"guilt0": {"acquitted": 0.86, "convicted": 0.14}, "guilt1": {"acquitted": 0.92, "convicted": 0.08}, "guilt2": {"acquitted": 0.91, "convicted": 0.09}, "mod2": {"allow": 1.0, "remove": 0.0}, "mod3": {"allow": 0.59, "needs_human_review": 0.41, "remove": 0.0}, "penalty0": {"death": 0.38, "life": 0.62}, "penalty1": {"death": 0.28, "life": 0.72}, "penalty2": {"death": 0.33, "life": 0.67}}
+  b {"guilt0": {"acquitted": 0.96, "convicted": 0.04}, "guilt1": {"acquitted": 0.97, "convicted": 0.03}, "guilt2": {"acquitted": 0.99, "convicted": 0.01}, "mod2": {"allow": 1.0, "remove": 0.0}, "mod3": {"allow": 0.55, "needs_human_review": 0.45, "remove": 0.0}, "penalty0": {"death": 0.23, "life": 0.77}, "penalty1": {"death": 0.23, "life": 0.77}, "penalty2": {"death": 0.39, "life": 0.61}}
+  c {"mod2": {"allow": 1.0, "remove": 0.0}, "mod3": {"allow": 0.8, "needs_human_review": 0.2, "remove": 0.0}}
+
+=== Dialect, AAE - SAE: mean probability (percentage points), 95% pair bootstrap ===
+
+-- FULL --
+a convicted  n=2019 AAE= 20.8 SAE= 22.4 diff=-1.65 [-2.13, -1.17]
+a death      n=2019 AAE= 28.9 SAE= 29.7 diff=-0.71 [-1.03, -0.39]
+a remove2    n=2019 AAE= 19.4 SAE= 15.2 diff=+4.15 [+3.30, +5.00]
+a remove3    n=2019 AAE= 13.6 SAE= 10.5 diff=+3.06 [+2.41, +3.73]
+a review3    n=2019 AAE= 13.1 SAE= 11.8 diff=+1.35 [+0.96, +1.74]
+a notallow3  n=2019 AAE= 26.7 SAE= 22.3 diff=+4.42 [+3.59, +5.23]
+b convicted  n=2019 AAE= 11.5 SAE= 13.2 diff=-1.71 [-2.11, -1.32]
+b death      n=2019 AAE= 20.6 SAE= 20.1 diff=+0.52 [+0.28, +0.76]
+b remove2    n=2019 AAE= 15.0 SAE= 12.5 diff=+2.51 [+1.80, +3.24]
+b remove3    n=2019 AAE= 11.0 SAE=  9.2 diff=+1.87 [+1.31, +2.44]
+b review3    n=2019 AAE= 11.0 SAE= 10.2 diff=+0.86 [+0.50, +1.22]
+b notallow3  n=2019 AAE= 22.1 SAE= 19.3 diff=+2.73 [+1.99, +3.46]
+c remove2    n=2019 AAE= 12.6 SAE= 10.6 diff=+2.03 [+1.36, +2.72]
+c remove3    n=2019 AAE= 12.1 SAE= 10.2 diff=+1.93 [+1.28, +2.58]
+c review3    n=2019 AAE=  4.7 SAE=  3.9 diff=+0.82 [+0.60, +1.03]
+c notallow3  n=2019 AAE= 16.8 SAE= 14.1 diff=+2.74 [+2.04, +3.45]
+
+-- CLEAN --
+a convicted  n=1349 AAE= 17.7 SAE= 19.6 diff=-1.88 [-2.40, -1.36]
+a death      n=1349 AAE= 28.5 SAE= 29.1 diff=-0.58 [-0.95, -0.21]
+a remove2    n=1349 AAE=  7.7 SAE=  7.2 diff=+0.53 [-0.01, +1.06]
+a remove3    n=1349 AAE=  4.8 SAE=  4.5 diff=+0.23 [-0.18, +0.62]
+a review3    n=1349 AAE=  9.8 SAE=  8.9 diff=+0.92 [+0.55, +1.30]
+a notallow3  n=1349 AAE= 14.5 SAE= 13.4 diff=+1.15 [+0.55, +1.75]
+b convicted  n=1349 AAE=  9.6 SAE= 11.1 diff=-1.58 [-2.00, -1.18]
+b death      n=1349 AAE= 20.3 SAE= 20.0 diff=+0.28 [+0.02, +0.54]
+b remove2    n=1349 AAE=  5.7 SAE=  5.6 diff=+0.10 [-0.38, +0.58]
+b remove3    n=1349 AAE=  3.9 SAE=  3.8 diff=+0.05 [-0.32, +0.40]
+b review3    n=1349 AAE=  7.8 SAE=  7.5 diff=+0.35 [+0.02, +0.70]
+b notallow3  n=1349 AAE= 11.7 SAE= 11.3 diff=+0.40 [-0.15, +0.95]
+c remove2    n=1349 AAE=  5.3 SAE=  5.0 diff=+0.38 [-0.10, +0.87]
+c remove3    n=1349 AAE=  5.1 SAE=  4.8 diff=+0.35 [-0.10, +0.82]
+c review3    n=1349 AAE=  3.3 SAE=  2.8 diff=+0.47 [+0.26, +0.68]
+c notallow3  n=1349 AAE=  8.4 SAE=  7.6 diff=+0.81 [+0.28, +1.35]
+
+=== Dialect, AAE - SAE: decision rates, 95% pair bootstrap ===
+Judge: share of the three framings above the neutral baseline, averaged per pair.
+remove2: P(remove) > 0.5. remove3/review3: top option of the three-way question.
+
+-- FULL --
+a convicted  n=2019 AAE= 63.6% SAE= 67.0% diff=-3.35 [-4.80, -1.88]
+a death      n=2019 AAE= 28.5% SAE= 31.6% diff=-3.05 [-4.54, -1.57]
+a remove2    n=2019 AAE= 17.8% SAE= 13.1% diff=+4.71 [+3.42, +5.99] count 359/264 | McNemar flips 142/47 p=2.8e-12
+a remove3    n=2019 AAE= 15.4% SAE= 10.9% diff=+4.46 [+3.17, +5.75] count 311/221 | McNemar flips 133/43 p=6.7e-12
+a review3    n=2019 AAE=  3.5% SAE=  4.1% diff=-0.59 [-1.58, +0.40] count 70/82 | McNemar flips 45/57 p=0.28
+b convicted  n=2019 AAE= 76.5% SAE= 80.4% diff=-3.88 [-4.89, -2.87]
+b death      n=2019 AAE= 14.1% SAE= 12.4% diff=+1.70 [+0.63, +2.76]
+b remove2    n=2019 AAE= 13.2% SAE= 10.7% diff=+2.48 [+1.29, +3.71] count 267/217 | McNemar flips 104/54 p=8.5e-05
+b remove3    n=2019 AAE= 11.7% SAE=  9.8% diff=+1.98 [+0.84, +3.12] count 237/197 | McNemar flips 92/52 p=0.0011
+b review3    n=2019 AAE=  2.6% SAE=  2.6% diff=-0.05 [-0.94, +0.84] count 52/53 | McNemar flips 42/43 p=1
+c remove2    n=2019 AAE= 10.3% SAE=  9.1% diff=+1.14 [-0.00, +2.33] count 207/184 | McNemar flips 82/59 p=0.064
+c remove3    n=2019 AAE= 11.5% SAE=  9.8% diff=+1.78 [+0.64, +2.92] count 233/197 | McNemar flips 88/52 p=0.003
+c review3    n=2019 AAE=  0.1% SAE=  0.2% diff=-0.10 [-0.35, +0.15] count 2/4 | McNemar flips 2/4 p=0.69
+
+-- CLEAN --
+a convicted  n=1349 AAE= 56.6% SAE= 62.0% diff=-5.44 [-7.29, -3.58]
+a death      n=1349 AAE= 27.9% SAE= 29.8% diff=-1.88 [-3.58, -0.15]
+a remove2    n=1349 AAE=  5.2% SAE=  5.0% diff=+0.15 [-0.82, +1.11] count 70/68 | McNemar flips 23/21 p=0.88
+a remove3    n=1349 AAE=  3.6% SAE=  3.6% diff=+0.00 [-0.82, +0.82] count 49/49 | McNemar flips 16/16 p=1
+a review3    n=1349 AAE=  2.7% SAE=  3.2% diff=-0.44 [-1.33, +0.52] count 37/43 | McNemar flips 18/24 p=0.44
+b convicted  n=1349 AAE= 72.8% SAE= 77.9% diff=-5.02 [-6.30, -3.76]
+b death      n=1349 AAE= 14.0% SAE= 11.9% diff=+2.08 [+0.86, +3.29]
+b remove2    n=1349 AAE=  3.3% SAE=  3.5% diff=-0.15 [-0.96, +0.67] count 45/47 | McNemar flips 16/18 p=0.86
+b remove3    n=1349 AAE=  2.5% SAE=  3.1% diff=-0.59 [-1.41, +0.15] count 34/42 | McNemar flips 11/19 p=0.2
+b review3    n=1349 AAE=  1.6% SAE=  1.8% diff=-0.22 [-1.04, +0.59] count 21/24 | McNemar flips 14/17 p=0.72
+c remove2    n=1349 AAE=  3.4% SAE=  3.8% diff=-0.37 [-1.26, +0.44] count 46/51 | McNemar flips 14/19 p=0.49
+c remove3    n=1349 AAE=  3.7% SAE=  4.0% diff=-0.30 [-1.19, +0.52] count 50/54 | McNemar flips 14/18 p=0.6
+c review3    n=1349 AAE=  0.1% SAE=  0.1% diff=-0.07 [-0.37, +0.15] count 1/2 | McNemar flips 1/2 p=1
+
+=== Three-way question ties (clean subset, review3 counts AAE/SAE) ===
+a tied responses=6 ties excluded: 37/42 ties to review: 38/46
+b tied responses=6 ties excluded: 20/22 ties to review: 22/24
+c tied responses=1 ties excluded: 1/2 ties to review: 1/2
+
+=== Overt probe: identical SAE text, writer stated Black - White ===
+
+-- FULL --
+prob convicted  n=2019 Black= 14.3 White= 17.9 diff=-3.60 [-3.80, -3.41]
+prob death      n=2019 Black= 29.8 White= 38.0 diff=-8.17 [-8.39, -7.94]
+prob remove2    n=2019 Black= 13.2 White= 15.4 diff=-2.18 [-2.44, -1.92]
+prob remove3    n=2019 Black=  8.9 White= 10.6 diff=-1.71 [-1.93, -1.50]
+prob review3    n=2019 Black= 13.2 White= 13.2 diff=+0.10 [-0.08, +0.27]
+dec  convicted  n=2019 Black= 43.1% White= 54.8% diff=-11.75 [-12.86, -10.65]
+dec  death      n=2019 Black= 29.5% White= 62.7% diff=-33.25 [-34.67, -31.83]
+dec  remove2    n=2019 Black= 11.0% White= 12.8% diff=-1.78 [-2.43, -1.19] count 222/258 | McNemar flips 2/38 p=1.5e-09
+dec  remove3    n=2019 Black=  8.9% White= 11.0% diff=-2.13 [-2.82, -1.49] count 179/222 | McNemar flips 3/46 p=7e-11
+dec  review3    n=2019 Black=  3.5% White=  3.7% diff=-0.20 [-1.04, +0.64] count 70/74 | McNemar flips 35/39 p=0.73
+
+-- CLEAN --
+prob convicted  n=1349 Black= 12.1 White= 14.9 diff=-2.85 [-3.04, -2.66]
+prob death      n=1349 Black= 29.7 White= 37.8 diff=-8.11 [-8.40, -7.83]
+prob remove2    n=1349 Black=  6.6 White=  7.6 diff=-1.07 [-1.31, -0.85]
+prob remove3    n=1349 Black=  4.2 White=  4.8 diff=-0.59 [-0.76, -0.44]
+prob review3    n=1349 Black= 10.6 White= 10.6 diff=+0.00 [-0.19, +0.18]
+dec  convicted  n=1349 Black= 35.1% White= 47.6% diff=-12.50 [-13.89, -11.12]
+dec  death      n=1349 Black= 29.1% White= 62.6% diff=-33.51 [-35.31, -31.65]
+dec  remove2    n=1349 Black=  3.8% White=  5.0% diff=-1.19 [-1.85, -0.59] count 51/67 | McNemar flips 1/17 p=0.00014
+dec  remove3    n=1349 Black=  3.0% White=  3.6% diff=-0.59 [-1.04, -0.15] count 41/49 | McNemar flips 1/9 p=0.021
+dec  review3    n=1349 Black=  1.9% White=  3.0% diff=-1.04 [-1.85, -0.30] count 26/40 | McNemar flips 8/22 p=0.016
+
+=== Replay stability (plain arm, 200 pairs x 2 sides) ===
+convicted  mean|delta|=1.29pp max=8.7pp
+death      mean|delta|=2.19pp max=11.3pp
+remove2    mean|delta|=0.81pp max=9.0pp
+remove3    mean|delta|=0.65pp max=10.0pp
+remove2 decision flips: 3 of 400
+death gap original=-0.59pp replay=-0.56pp per-pair corr=0.81
+remove2 gap original=+4.90pp replay=+4.89pp per-pair corr=0.99
+
+=== Where the plain two-way removal gap sits ===
+share of summed AAE-SAE P(remove) gap from the 670 non-clean pairs: 91.5%
+largest-gap pair ids: [367, 375, 1558, 80, 1944, 147, 607, 1221, 1672, 1910] (clean among them: 0)
