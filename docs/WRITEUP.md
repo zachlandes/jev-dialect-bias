@@ -211,6 +211,11 @@ It is still unequal treatment, and it only tests this one kind of cue.
   The model will not make that call correctly on its own.
 - **Keep people in the loop.**
   Start in shadow mode or with human review of removals, and measure false removals on your own real posts before trusting automatic action.
+- **Build a test set from your own posts.**
+  Label real posts from your platform by your own policy, including in-group and reclaimed language, and compare removal rates across groups before relying on Jev.
+  This study's tweets and prompts are not your data or your policy.
+- **Tune the removal cutoff on that test set, but do not expect it to fix a gap.**
+  The cutoff sets the removal rate and the review workload, not the bias: with plain instructions, AAE posts were removed 1.2 to 1.4 times as often as SAE posts at every cutoff from 0.3 to 0.9, and where a high cutoff brought the gap within noise, the extra AAE posts moved into the human-review band instead.
 - **Leave identity out of what the moderator sees** unless it is genuinely needed.
   One added line about race moved answers more than dialect did, though removing all identity context is not proven as a fix either.
 

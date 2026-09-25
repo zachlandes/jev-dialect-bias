@@ -1,0 +1,130 @@
+=== Shared cutoff sweep, two-way question: removed when P(remove) > cutoff ===
+gap = AAE - SAE removal rate (pp), 95% pair bootstrap; ratio = AAE / SAE
+
+-- FULL a (plain) --
+> 0.30  AAE= 23.8% SAE= 18.3% gap=+5.45 [+4.06, +6.88] ratio=1.30
+> 0.35  AAE= 22.3% SAE= 17.0% gap=+5.25 [+3.81, +6.64] ratio=1.31
+> 0.40  AAE= 20.4% SAE= 15.7% gap=+4.71 [+3.37, +6.04] ratio=1.30
+> 0.45  AAE= 19.1% SAE= 14.0% gap=+5.05 [+3.71, +6.39] ratio=1.36
+> 0.50  AAE= 17.8% SAE= 13.1% gap=+4.71 [+3.42, +5.99] ratio=1.36
+> 0.55  AAE= 16.7% SAE= 12.3% gap=+4.36 [+3.07, +5.70] ratio=1.35
+> 0.60  AAE= 15.4% SAE= 11.8% gap=+3.62 [+2.38, +4.90] ratio=1.31
+> 0.65  AAE= 14.3% SAE= 10.8% gap=+3.47 [+2.23, +4.75] ratio=1.32
+> 0.70  AAE= 13.0% SAE=  9.9% gap=+3.17 [+1.98, +4.36] ratio=1.32
+> 0.75  AAE= 11.8% SAE=  8.6% gap=+3.17 [+2.03, +4.36] ratio=1.37
+> 0.80  AAE= 10.4% SAE=  7.6% gap=+2.77 [+1.73, +3.81] ratio=1.37
+> 0.85  AAE=  8.8% SAE=  6.5% gap=+2.28 [+1.24, +3.32] ratio=1.35
+> 0.90  AAE=  6.7% SAE=  5.5% gap=+1.19 [+0.30, +2.13] ratio=1.22
+
+-- FULL b (dialect note) --
+> 0.30  AAE= 19.0% SAE= 15.5% gap=+3.57 [+2.28, +4.85] ratio=1.23
+> 0.35  AAE= 17.8% SAE= 14.2% gap=+3.62 [+2.33, +4.90] ratio=1.26
+> 0.40  AAE= 16.3% SAE= 12.9% gap=+3.37 [+2.08, +4.66] ratio=1.26
+> 0.45  AAE= 14.5% SAE= 11.8% gap=+2.63 [+1.39, +3.86] ratio=1.22
+> 0.50  AAE= 13.2% SAE= 10.7% gap=+2.48 [+1.29, +3.71] ratio=1.23
+> 0.55  AAE= 11.6% SAE=  9.8% gap=+1.88 [+0.74, +3.02] ratio=1.19
+> 0.60  AAE= 10.6% SAE=  8.9% gap=+1.73 [+0.64, +2.82] ratio=1.19
+> 0.65  AAE=  9.5% SAE=  7.9% gap=+1.58 [+0.59, +2.58] ratio=1.20
+> 0.70  AAE=  8.6% SAE=  7.0% gap=+1.58 [+0.64, +2.53] ratio=1.23
+> 0.75  AAE=  7.0% SAE=  6.2% gap=+0.79 [-0.15, +1.73] ratio=1.13
+> 0.80  AAE=  5.3% SAE=  5.0% gap=+0.40 [-0.45, +1.24] ratio=1.08
+> 0.85  AAE=  4.3% SAE=  4.4% gap=-0.05 [-0.84, +0.74] ratio=0.99
+> 0.90  AAE=  3.0% SAE=  3.4% gap=-0.40 [-1.14, +0.35] ratio=0.88
+
+-- FULL c (written policy) --
+> 0.30  AAE= 15.9% SAE= 12.8% gap=+3.12 [+1.83, +4.41] ratio=1.24
+> 0.35  AAE= 14.1% SAE= 12.2% gap=+1.88 [+0.64, +3.12] ratio=1.15
+> 0.40  AAE= 12.7% SAE= 11.5% gap=+1.19 [+0.00, +2.38] ratio=1.10
+> 0.45  AAE= 11.6% SAE= 10.1% gap=+1.54 [+0.40, +2.67] ratio=1.15
+> 0.50  AAE= 10.3% SAE=  9.1% gap=+1.14 [-0.00, +2.33] ratio=1.12
+> 0.55  AAE=  9.5% SAE=  8.2% gap=+1.29 [+0.25, +2.38] ratio=1.16
+> 0.60  AAE=  8.6% SAE=  7.5% gap=+1.04 [+0.05, +2.03] ratio=1.14
+> 0.65  AAE=  7.6% SAE=  6.5% gap=+1.09 [+0.10, +2.08] ratio=1.17
+> 0.70  AAE=  6.4% SAE=  6.1% gap=+0.25 [-0.69, +1.19] ratio=1.04
+> 0.75  AAE=  5.4% SAE=  5.0% gap=+0.40 [-0.45, +1.24] ratio=1.08
+> 0.80  AAE=  4.2% SAE=  4.2% gap=+0.00 [-0.84, +0.79] ratio=1.00
+> 0.85  AAE=  3.0% SAE=  3.3% gap=-0.35 [-1.09, +0.40] ratio=0.90
+> 0.90  AAE=  2.0% SAE=  2.2% gap=-0.25 [-0.84, +0.35] ratio=0.89
+
+-- CLEAN a (plain) --
+> 0.30  AAE=  9.0% SAE=  8.5% gap=+0.59 [-0.52, +1.70] ratio=1.07
+> 0.35  AAE=  8.2% SAE=  7.8% gap=+0.37 [-0.67, +1.41] ratio=1.05
+> 0.40  AAE=  6.9% SAE=  6.9% gap=+0.00 [-0.96, +0.96] ratio=1.00
+> 0.45  AAE=  6.2% SAE=  5.9% gap=+0.22 [-0.74, +1.19] ratio=1.04
+> 0.50  AAE=  5.2% SAE=  5.0% gap=+0.15 [-0.82, +1.11] ratio=1.03
+> 0.55  AAE=  4.4% SAE=  4.5% gap=-0.15 [-1.04, +0.74] ratio=0.97
+> 0.60  AAE=  3.9% SAE=  4.1% gap=-0.22 [-1.04, +0.59] ratio=0.95
+> 0.65  AAE=  3.3% SAE=  3.6% gap=-0.37 [-1.26, +0.52] ratio=0.90
+> 0.70  AAE=  2.7% SAE=  3.0% gap=-0.30 [-1.11, +0.44] ratio=0.90
+> 0.75  AAE=  2.2% SAE=  2.4% gap=-0.22 [-0.96, +0.44] ratio=0.91
+> 0.80  AAE=  1.9% SAE=  2.1% gap=-0.22 [-0.82, +0.37] ratio=0.90
+> 0.85  AAE=  1.6% SAE=  1.8% gap=-0.15 [-0.74, +0.37] ratio=0.92
+> 0.90  AAE=  1.3% SAE=  1.5% gap=-0.15 [-0.59, +0.30] ratio=0.90
+
+-- CLEAN b (dialect note) --
+> 0.30  AAE=  6.7% SAE=  7.0% gap=-0.30 [-1.26, +0.67] ratio=0.96
+> 0.35  AAE=  6.1% SAE=  5.8% gap=+0.30 [-0.67, +1.26] ratio=1.05
+> 0.40  AAE=  5.3% SAE=  5.1% gap=+0.22 [-0.74, +1.19] ratio=1.04
+> 0.45  AAE=  4.1% SAE=  4.1% gap=+0.00 [-0.96, +0.96] ratio=1.00
+> 0.50  AAE=  3.3% SAE=  3.5% gap=-0.15 [-0.96, +0.67] ratio=0.96
+> 0.55  AAE=  2.8% SAE=  3.0% gap=-0.22 [-1.04, +0.52] ratio=0.93
+> 0.60  AAE=  2.4% SAE=  2.7% gap=-0.30 [-1.04, +0.37] ratio=0.89
+> 0.65  AAE=  2.0% SAE=  2.4% gap=-0.37 [-1.04, +0.22] ratio=0.84
+> 0.70  AAE=  1.7% SAE=  2.0% gap=-0.30 [-0.89, +0.30] ratio=0.85
+> 0.75  AAE=  1.3% SAE=  1.7% gap=-0.37 [-0.89, +0.15] ratio=0.78
+> 0.80  AAE=  1.0% SAE=  1.5% gap=-0.44 [-0.96, +0.00] ratio=0.70
+> 0.85  AAE=  0.9% SAE=  1.3% gap=-0.37 [-0.82, +0.07] ratio=0.71
+> 0.90  AAE=  0.5% SAE=  1.1% gap=-0.59 [-1.11, -0.15] ratio=0.47
+
+-- CLEAN c (written policy) --
+> 0.30  AAE=  6.2% SAE=  5.7% gap=+0.44 [-0.59, +1.48] ratio=1.08
+> 0.35  AAE=  5.2% SAE=  5.3% gap=-0.15 [-1.04, +0.74] ratio=0.97
+> 0.40  AAE=  4.3% SAE=  5.0% gap=-0.67 [-1.56, +0.22] ratio=0.87
+> 0.45  AAE=  3.9% SAE=  4.2% gap=-0.30 [-1.19, +0.52] ratio=0.93
+> 0.50  AAE=  3.4% SAE=  3.8% gap=-0.37 [-1.26, +0.44] ratio=0.90
+> 0.55  AAE=  3.1% SAE=  3.3% gap=-0.22 [-0.96, +0.52] ratio=0.93
+> 0.60  AAE=  2.8% SAE=  2.8% gap=+0.00 [-0.74, +0.67] ratio=1.00
+> 0.65  AAE=  2.3% SAE=  2.2% gap=+0.07 [-0.52, +0.67] ratio=1.03
+> 0.70  AAE=  1.9% SAE=  2.1% gap=-0.22 [-0.82, +0.30] ratio=0.89
+> 0.75  AAE=  1.8% SAE=  1.8% gap=+0.00 [-0.52, +0.52] ratio=1.00
+> 0.80  AAE=  1.2% SAE=  1.5% gap=-0.30 [-0.89, +0.30] ratio=0.80
+> 0.85  AAE=  0.7% SAE=  1.0% gap=-0.37 [-0.89, +0.15] ratio=0.64
+> 0.90  AAE=  0.2% SAE=  0.6% gap=-0.37 [-0.82, +0.00] ratio=0.38
+
+=== Three bands: remove above high, human review between, keep at or below low ===
+
+-- FULL a (plain) --
+0.3-0.7 review  AAE= 10.7% SAE=  8.5% gap=+2.28 [+0.84, +3.71] ratio=1.27
+0.3-0.7 remove  AAE= 13.0% SAE=  9.9% gap=+3.17 [+1.98, +4.36] ratio=1.32
+0.4-0.8 review  AAE= 10.1% SAE=  8.1% gap=+1.93 [+0.54, +3.32] ratio=1.24
+0.4-0.8 remove  AAE= 10.4% SAE=  7.6% gap=+2.77 [+1.73, +3.81] ratio=1.37
+
+-- FULL b (dialect note) --
+0.3-0.7 review  AAE= 10.5% SAE=  8.5% gap=+1.98 [+0.59, +3.37] ratio=1.23
+0.3-0.7 remove  AAE=  8.6% SAE=  7.0% gap=+1.58 [+0.64, +2.53] ratio=1.23
+0.4-0.8 review  AAE= 10.9% SAE=  8.0% gap=+2.97 [+1.63, +4.36] ratio=1.37
+0.4-0.8 remove  AAE=  5.3% SAE=  5.0% gap=+0.40 [-0.45, +1.24] ratio=1.08
+
+-- FULL c (written policy) --
+0.3-0.7 review  AAE=  9.5% SAE=  6.6% gap=+2.87 [+1.58, +4.16] ratio=1.43
+0.3-0.7 remove  AAE=  6.4% SAE=  6.1% gap=+0.25 [-0.69, +1.19] ratio=1.04
+0.4-0.8 review  AAE=  8.5% SAE=  7.3% gap=+1.19 [-0.10, +2.53] ratio=1.16
+0.4-0.8 remove  AAE=  4.2% SAE=  4.2% gap=+0.00 [-0.84, +0.79] ratio=1.00
+
+-- CLEAN a (plain) --
+0.3-0.7 review  AAE=  6.4% SAE=  5.5% gap=+0.89 [-0.30, +2.08] ratio=1.16
+0.3-0.7 remove  AAE=  2.7% SAE=  3.0% gap=-0.30 [-1.11, +0.44] ratio=0.90
+0.4-0.8 review  AAE=  5.0% SAE=  4.7% gap=+0.22 [-0.74, +1.19] ratio=1.05
+0.4-0.8 remove  AAE=  1.9% SAE=  2.1% gap=-0.22 [-0.82, +0.37] ratio=0.90
+
+-- CLEAN b (dialect note) --
+0.3-0.7 review  AAE=  5.0% SAE=  5.0% gap=+0.00 [-1.11, +1.11] ratio=1.00
+0.3-0.7 remove  AAE=  1.7% SAE=  2.0% gap=-0.30 [-0.89, +0.30] ratio=0.85
+0.4-0.8 review  AAE=  4.3% SAE=  3.6% gap=+0.67 [-0.30, +1.63] ratio=1.18
+0.4-0.8 remove  AAE=  1.0% SAE=  1.5% gap=-0.44 [-0.96, +0.00] ratio=0.70
+
+-- CLEAN c (written policy) --
+0.3-0.7 review  AAE=  4.3% SAE=  3.6% gap=+0.67 [-0.37, +1.70] ratio=1.18
+0.3-0.7 remove  AAE=  1.9% SAE=  2.1% gap=-0.22 [-0.82, +0.30] ratio=0.89
+0.4-0.8 review  AAE=  3.1% SAE=  3.5% gap=-0.37 [-1.33, +0.59] ratio=0.89
+0.4-0.8 remove  AAE=  1.2% SAE=  1.5% gap=-0.30 [-0.89, +0.30] ratio=0.80

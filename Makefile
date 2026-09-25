@@ -1,6 +1,6 @@
 UV_ANALYSIS = uv run --with 'numpy>=1.26' --with 'scipy>=1.11'
 
-.PHONY: check analysis data clean-ids run
+.PHONY: check analysis sweep data clean-ids run
 
 # Reproduce every write-up figure from the committed results; needs no API key or dataset
 check:
@@ -8,6 +8,9 @@ check:
 
 analysis:
 	$(UV_ANALYSIS) analyze.py > results/analysis.txt
+
+sweep:
+	$(UV_ANALYSIS) threshold_sweep.py > results/threshold_sweep.txt
 
 data:
 	python3 fetch_data.py

@@ -244,6 +244,8 @@ Written policy (built from TypeSafe's moderation guidance):
     <li><strong>Do not treat this as a safety clearance.</strong> Jev removed AAE posts more often, and the test cannot rule out a dialect effect.</li>
     <li><strong>Decide the policy on reclaimed and in-group language explicitly.</strong> The model will not make that call correctly on its own.</li>
     <li><strong>Keep people in the loop.</strong> Start in shadow mode or with human review of removals, and measure false removals on your own real posts before trusting automatic action.</li>
+    <li><strong>Build a test set from your own posts.</strong> Label real posts from your platform by your own policy, including in-group and reclaimed language, and compare removal rates across groups before relying on Jev. This study's tweets and prompts are not your data or your policy.</li>
+    <li><strong>Tune the removal cutoff on that test set, but do not expect it to fix a gap.</strong> The cutoff sets the removal rate and the review workload, not the bias: with plain instructions, AAE posts were removed 1.2 to 1.4 times as often as SAE posts at every cutoff from 0.3 to 0.9, and where a high cutoff brought the gap within noise, the extra AAE posts moved into the human-review band instead.</li>
     <li><strong>Leave identity out of what the moderator sees</strong> unless it is genuinely needed. One added line about race moved answers more than dialect did, though removing all identity context is not proven as a fix either.</li>
   </ul>
 </section>

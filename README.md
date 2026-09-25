@@ -61,6 +61,9 @@ Each rate averages the He/She/They versions within a pair first, because they ar
 
 As removal decisions (probability of "remove" above one half), plain Jev removed 17.8% of AAE posts vs 13.1% of SAE posts on the full dataset, and 5.2% vs 5.0% on the clean subset.
 91.5% of the summed full-dataset gap comes from the 670 pairs with slurs or profanity.
+Moving that 0.5 cutoff does not fix the gap on its own ([results/threshold_sweep.txt](results/threshold_sweep.txt)).
+With plain instructions, AAE posts were removed 1.2 to 1.4 times as often as SAE posts at every cutoff from 0.30 to 0.90.
+With the dialect line or the written policy, a high cutoff (0.75 or above) brought the removal gap within noise, but only by removing about half as many posts, and the extra AAE posts then landed in a human-review band instead (for example 9.5% vs 6.6% of posts between 0.3 and 0.7 under the policy).
 On the clean subset, Jev put slightly more probability on "needs human review" for AAE, but actual referrals ran the other way: 37 AAE vs 43 SAE posts, within noise.
 
 **Stating the writer's race (identical SAE text)**
@@ -129,6 +132,7 @@ New runs also record a SHA-256 of each exact request, so a result can be matched
 | `analyze.py` | The paired analysis |
 | `results/results.jsonl` | Jev's answer probabilities for all 16,555 requests of the published run, keyed `variant\|pair_id\|side`; no text |
 | `results/analysis.txt` | `analyze.py`'s full output on those results |
+| `threshold_sweep.py`, `results/threshold_sweep.txt` | Removal rates and gaps at shared cutoffs from 0.30 to 0.90, and for three-band schemes |
 | `lexical.py`, `clean_ids.txt` | The word filter and the 1,349 clean pair ids it produces |
 | `fetch_data.py` | Downloads and verifies the dataset |
 | `tests/` | The checks behind `make check` |

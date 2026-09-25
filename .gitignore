@@ -5,6 +5,7 @@ data/
 results/*
 !results/results.jsonl
 !results/analysis.txt
+!results/threshold_sweep.txt
 
 # Keys and local agent settings
 .env

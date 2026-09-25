@@ -197,3 +197,30 @@ def test_clean_ids_and_nword_counts(clean):
     for i in EXAMPLES:
         # The write-up quotes the AAE side verbatim
         in_writeup(aae[i])
+
+
+def test_threshold_sweep(R, clean):
+    import threshold_sweep as ts
+    buf = io.StringIO()
+    with contextlib.redirect_stdout(buf):
+        ts.report(RESULTS)
+    with open(os.path.join(ROOT, "results", "threshold_sweep.txt")) as f:
+        assert buf.getvalue() == f.read(), "rerun: make sweep"
+
+    full = range(analyze.N_PAIRS)
+    plain = ts.sweep(R, "a", full)
+    ratios = [s["ratio"] for s in plain.values()]
+    # "1.2 to 1.4 times as often ... at every cutoff tried"; the gap never reaches zero
+    claim = f"{min(ratios):.1f} to {max(ratios):.1f} times as often"
+    in_writeup(claim)
+    in_readme(claim)
+    assert all(s["lo"] > 0 for s in plain.values())
+    for v in "bc":
+        rows = ts.sweep(R, v, full)
+        high = [s for t, s in rows.items() if t >= 0.75]
+        # Within noise at high cutoffs, but only at about half the 0.5 removal rate
+        assert all(s["lo"] < 0 < s["hi"] or s["lo"] == 0 or s["hi"] == 0 for s in high)
+        assert all(s["x"] < 0.6 * rows[0.5]["x"] for s in high)
+    review, _ = ts.bands(R, "c", full, 0.3, 0.7)
+    assert review["lo"] > 0
+    in_readme(f"{pct(review['x'])} vs {pct(review['y'])} of posts between 0.3 and 0.7 under the policy")
